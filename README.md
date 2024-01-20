@@ -3,7 +3,9 @@
 
 ## Overview
 
-This Rust application demonstrates the usage of the SQLx library to interact with a PostgreSQL database. The application models a basic permission system with tables for permissions, roles, role_permissions (many-to-many relationship), and users (one-to-many relationship with roles).
+This Rust application demonstrates the usage of the SQLx library to interact with a PostgreSQL database. The application models a basic permission system with tables for permissions, roles, role_permissions (many-to-many relationship), and users (one-to-many relationship with roles). It was extracted from a project that am currently working on for a sms gateway saas.
+
+![Database](database.png)
 
 ## Prerequisites
 
@@ -15,12 +17,12 @@ This Rust application demonstrates the usage of the SQLx library to interact wit
 1. Clone the repository:
 
 ```bash
-  git clone https://github.com/your_username/your_project.git
+  git clone https://github.com/KevinWolf254/actix_web_sqlx_with_tests_example.git
 ```
 2. Navigate to the project directory:
 
 ```bash
-  cd project_name
+  cd actix_web_sqlx_tests
 ```
 
 3. Install dependencies:
@@ -43,7 +45,7 @@ docker run -d --name sms_gateway_db \
            -e POSTGRES_DB=SMS_GATEWAY \
            postgres:latest
 ```
-5. Set up Admin4 to access postgresql
+5. Set up Admin4 to access postgresql (Optional)
 
 ```bash
 docker run -p 5050:80 \
@@ -53,26 +55,10 @@ docker run -p 5050:80 \
            -e PGADMIN_DEFAULT_PASSWORD=Pass12345 \
            -d dpage/pgadmin4
 ```
-Login to Admin4 and create a schema `SMS_GATEWAY_USE`
 
-6. Install sqlx
+6. Use the [README.md](https://github.com/KevinWolf254/actix_web_sqlx_with_tests_example/blob/main/migrations/README.md) file under migrations folder to create the database and its artifacts.
 
-```bash
-cargo install sqlx-cli
-```
-
-7. Run migrations
-
-```bash
-sqlx migrate run
-```
-
-To revert run
-
-```bash
-sqlx migrate revert
-```
-8. Run the project
+7. Run the project
 
 ```bash
   cargo run
@@ -85,3 +71,4 @@ Feel free to contribute to this project by opening issues or submitting pull req
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)

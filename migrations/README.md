@@ -1,7 +1,7 @@
+SQLx is an async, pure Rust† SQL crate featuring compile-time checked queries without a DSL.
+You can check out it's documentation [here](https://github.com/launchbadge/sqlx)
 
-Create a database.
-Update the DATABASE_URL in the .env file with your database connection details.
-
+it uses the DATABASE_URL in the .env file to create your database.
 1. Install sqlx
 
 ```bash
